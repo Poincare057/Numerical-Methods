@@ -1,19 +1,19 @@
 #1st order Wave Equation Solvers
 #1. Godunov Scheme
-##a = 4
-##v = []
-##x = linspace(0, 1, 10)
-##t = linspace(0, 2, 150)
-##h = 1/10
-##dt = 2/150
-##l = dt/h
-##v(1:10, 1) = sin(3.1416*x) + cos(3.1416*x);
-##for n = 1:150
-##  for i = 2:9
-##    v(i, n+1) = v(i, n) - l*((1 + sign(a))/2)*a*(v(i,n) - v(i-1, n)) - l*((1 - sign(a))/2)*a*(v(i+1,n) - v(i, n)) ;
-##endfor;
-##endfor;
-##surf(x, t, transpose(v(1:10, 1:150)))
+a = 4
+v = []
+x = linspace(0, 1, 10)
+t = linspace(0, 2, 150)
+h = 1/10
+dt = 2/150
+l = dt/h
+v(1:10, 1) = sin(3.1416*x) + cos(3.1416*x);
+for n = 1:150
+  for i = 2:9
+    v(i, n+1) = v(i, n) - l*((1 + sign(a))/2)*a*(v(i,n) - v(i-1, n)) - l*((1 - sign(a))/2)*a*(v(i+1,n) - v(i, n)) ;
+endfor;
+endfor;
+surf(x, t, transpose(v(1:10, 1:150)))
 
 #2. Lax-Friedrichs Scheme
 ##a = 4
